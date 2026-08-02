@@ -15,7 +15,7 @@
 - [x] Two minimized upstream bug reports and duplicate-search record for the
       primary panic
 - [x] Five-minute live demo script/runbook
-- [ ] Public push (performed by repository owner outside this workspace)
+- [x] Public repository: https://github.com/cneuralnetwork/go-diff-rs
 - [ ] Upstream issue filed by an account with repository issue permission (the connected integration returned HTTP 403); paste either ready report under `bug-cases/`
 - [ ] Five-minute video URL inserted after the owner records/uploads it
 

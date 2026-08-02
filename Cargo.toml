@@ -1,0 +1,33 @@
+[package]
+name = "go-diff-rs"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+description = "A native, behavior-compatible Rust port of sergi/go-diff"
+license = "MIT AND Apache-2.0"
+repository = "https://github.com/cneuralnetwork/go-diff-rs"
+readme = "README.md"
+keywords = ["diff", "match", "patch", "text"]
+categories = ["algorithms", "text-processing"]
+
+[lib]
+name = "diff_match_patch"
+path = "src/lib.rs"
+
+[[bin]]
+name = "go-diff-rs"
+path = "src/main.rs"
+
+[[bench]]
+name = "upstream"
+harness = false
+
+[dependencies]
+
+[dev-dependencies]
+
+[lints.rust]
+unsafe_code = "forbid"
+
+[lints.clippy]
+all = "warn"

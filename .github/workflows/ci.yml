@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  parity:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: "1.24.10"
+          cache-dependency-path: tests/original/go-diff/go.sum
+      - name: Install pinned Rust toolchain
+        run: rustup toolchain install 1.85.0 --profile minimal --component clippy,rustfmt
+      - name: Verify, test, and lint
+        run: make check
+
+  container:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build runnable image in one command
+        run: docker build --tag go-diff-rs:ci .
+      - name: Smoke-test artifact
+        run: docker run --rm go-diff-rs:ci --help

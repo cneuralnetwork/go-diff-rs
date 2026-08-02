@@ -1,0 +1,33 @@
+
+running 25 tests
+test port_tests::diff_test::test_common_prefix_length ... ok
+test port_tests::diff_test::test_common_suffix_length ... ok
+test port_tests::diff_test::test_diff_bisect ... ok
+test port_tests::diff_test::test_diff_bisect_split ... ok
+test port_tests::diff_test::test_diff_chars_to_lines ... ok
+test port_tests::diff_test::test_diff_cleanup_efficiency ... ok
+test port_tests::diff_test::test_diff_cleanup_merge ... ok
+test port_tests::diff_test::test_diff_cleanup_semantic ... ok
+test port_tests::diff_test::test_diff_cleanup_semantic_lossless ... ok
+test port_tests::diff_test::test_diff_common_overlap ... ok
+test port_tests::diff_test::test_diff_common_prefix ... ok
+test port_tests::diff_test::test_diff_common_suffix ... ok
+test port_tests::diff_test::test_diff_delta ... ok
+test port_tests::diff_test::test_diff_half_match ... ok
+test port_tests::diff_test::test_diff_levenshtein ... ok
+test port_tests::diff_test::test_diff_lines_to_chars ... ok
+test port_tests::diff_test::test_diff_main ... ok
+test port_tests::diff_test::test_diff_main_with_check_lines ... ok
+test port_tests::diff_test::test_diff_main_with_timeout ... ok
+test port_tests::diff_test::test_diff_partial_line_index ... ok
+test port_tests::diff_test::test_diff_pretty_html ... ok
+test port_tests::diff_test::test_diff_pretty_text ... ok
+test port_tests::diff_test::test_diff_text ... ok
+test port_tests::diff_test::test_diff_x_index ... ok
+test port_tests::diff_test::test_massive_rune_diff_conversion ... ok
+
+test result: ok. 25 passed; 0 failed; 0 ignored; 0 measured; 25 filtered out; finished in 1.20s
+
+   Compiling go-diff-rs v0.1.0 (/home/deeponh/Projects/postmortem/go-diff-rs)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.56s
+     Running unittests src/lib.rs (target/debug/deps/diff_match_patch-f99e7c542a8d19d6)

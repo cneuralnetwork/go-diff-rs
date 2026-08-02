@@ -1,0 +1,78 @@
+{
+  "files": [
+    {
+      "extra_functions": [],
+      "failed": 0,
+      "missing_functions": [],
+      "original_file": "diffmatchpatch/diff_test.go",
+      "original_test_functions": 25,
+      "pass_rate_percent": 100.0,
+      "passed": 25,
+      "rust_file": "tests/port/diff_test.rs",
+      "transcript": "tests/port/diff_test.transcript.txt",
+      "translated_test_functions": 25
+    },
+    {
+      "extra_functions": [],
+      "failed": 0,
+      "missing_functions": [],
+      "original_file": "diffmatchpatch/index_test.go",
+      "original_test_functions": 1,
+      "pass_rate_percent": 100.0,
+      "passed": 1,
+      "rust_file": "tests/port/index_test.rs",
+      "transcript": "tests/port/index_test.transcript.txt",
+      "translated_test_functions": 1
+    },
+    {
+      "extra_functions": [],
+      "failed": 0,
+      "missing_functions": [],
+      "original_file": "diffmatchpatch/match_test.go",
+      "original_test_functions": 3,
+      "pass_rate_percent": 100.0,
+      "passed": 3,
+      "rust_file": "tests/port/match_test.rs",
+      "transcript": "tests/port/match_test.transcript.txt",
+      "translated_test_functions": 3
+    },
+    {
+      "extra_functions": [],
+      "failed": 0,
+      "missing_functions": [],
+      "original_file": "diffmatchpatch/patch_test.go",
+      "original_test_functions": 9,
+      "pass_rate_percent": 100.0,
+      "passed": 9,
+      "rust_file": "tests/port/patch_test.rs",
+      "transcript": "tests/port/patch_test.transcript.txt",
+      "translated_test_functions": 9
+    },
+    {
+      "extra_functions": [],
+      "failed": 0,
+      "missing_functions": [],
+      "original_file": "diffmatchpatch/stringutil_test.go",
+      "original_test_functions": 4,
+      "pass_rate_percent": 100.0,
+      "passed": 4,
+      "rust_file": "tests/port/stringutil_test.rs",
+      "transcript": "tests/port/stringutil_test.transcript.txt",
+      "translated_test_functions": 4
+    }
+  ],
+  "generated_at_utc": "2026-08-02T12:32:24.378469+00:00",
+  "helper_only_original_files": [
+    "diffmatchpatch/benchutil_test.go"
+  ],
+  "original_files_modified": 0,
+  "original_manifest": "tests/original/SHA256SUMS",
+  "overall": {
+    "failed": 0,
+    "original_test_functions": 42,
+    "pass_rate_percent": 100.0,
+    "passed": 42,
+    "translated_test_functions": 42
+  },
+  "upstream_commit": "57c41f4cb9849a2e83cdbd7644b31e6d7a7e2586"
+}

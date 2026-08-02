@@ -1,0 +1,16 @@
+
+running 9 tests
+test port_tests::patch_test::test_patch_add_context ... ok
+test port_tests::patch_test::test_patch_add_padding ... ok
+test port_tests::patch_test::test_patch_apply ... ok
+test port_tests::patch_test::test_patch_from_text ... ok
+test port_tests::patch_test::test_patch_make_and_patch_to_text ... ok
+test port_tests::patch_test::test_patch_make_out_of_range_panic ... ok
+test port_tests::patch_test::test_patch_split_max ... ok
+test port_tests::patch_test::test_patch_string ... ok
+test port_tests::patch_test::test_patch_to_text ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 41 filtered out; finished in 0.01s
+
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+     Running unittests src/lib.rs (target/debug/deps/diff_match_patch-f99e7c542a8d19d6)

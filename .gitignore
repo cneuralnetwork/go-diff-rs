@@ -1,0 +1,5 @@
+/target/
+/bench/bin/
+/fuzz/bin/
+*.profraw
+*.profdata

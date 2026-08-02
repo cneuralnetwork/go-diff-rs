@@ -47,6 +47,6 @@ The presenter records the terminal while running `make demo`. Keep
 
 - Show zero unsafe/Any/FFI/dependencies and the under-8,000 line count.
 - Scroll through several of the 21 decisions, not just their headings.
-- Show both minimized upstream findings. Until the owner files one, disclose the
-  integration's 403 instead of claiming an issue URL.
+- Show both minimized upstream findings and the filed Bug Catcher issue:
+  https://github.com/sergi/go-diff/issues/157.
 - End on the README reproduction commands and public repository URL.

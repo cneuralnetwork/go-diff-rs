@@ -34,8 +34,9 @@ U+FFFD. The resulting delete diff contains the three-byte UTF-8 encoding of
 U+FFFD. `patchMake2` keeps the original one-byte `postpatchText`, then slices it
 using the three-byte diff length at line 171.
 
-Issue #21 established the library's replacement behavior for invalid UTF-8 in
-diffs, but searches found no existing issue for this `PatchMake` panic.
+Issue #21 documents the library's replacement behavior for invalid UTF-8.
+Issues #31 and #127 report different `PatchMake` slice panics on valid-text
+inputs and are closed; neither covers this invalid-byte length expansion.
 
 ## Expected behavior
 
@@ -43,3 +44,6 @@ diffs, but searches found no existing issue for this `PatchMake` panic.
 Normalizing the source consistently with the generated diffs (or otherwise
 returning/documenting a controlled result) would avoid the out-of-bounds slice.
 A regression test with `string([]byte{0xe0})` covers the minimum case.
+
+The pinned reproducer and differential-testing context are published at
+https://github.com/cneuralnetwork/go-diff-rs/tree/main/bug-cases/invalid-utf8-patchmake.

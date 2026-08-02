@@ -16,10 +16,10 @@
       primary panic
 - [x] Five-minute live demo script/runbook
 - [x] Public repository: https://github.com/cneuralnetwork/go-diff-rs
-- [ ] Upstream issue filed by an account with repository issue permission (the connected integration returned HTTP 403); paste either ready report under `bug-cases/`
+- [x] Upstream Bug Catcher issue: https://github.com/sergi/go-diff/issues/157
 - [ ] Five-minute video URL inserted after the owner records/uploads it
 
 Before submission, run `make check`, `make fuzz`, `make bench`, `make coverage`,
-`make metrics`, `make parity-report`, `make docker-build`, and `make demo`. Commit
-the regenerated evidence and replace the three remaining owner/external-action
-checkboxes with links.
+`make metrics`, `make parity-report`, `make docker-build`, and `make demo`. These
+commands are green for the published commit; regenerate the evidence if code
+changes, then insert the remaining video URL.

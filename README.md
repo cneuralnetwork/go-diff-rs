@@ -123,7 +123,9 @@ to the original string. It also exposed an unused blank-line-start expression
 that changes semantic-lossless boundaries around CRLF. Minimized, pinned
 reproducers and root-cause analyses are in [BUG_REPORT.md](BUG_REPORT.md) and
 `bug-cases/`. The v1.4.0 compatibility profile preserves both behaviors
-explicitly rather than silently claiming behavioral improvements.
+explicitly rather than silently claiming behavioral improvements. The primary
+finding is filed upstream as
+[`sergi/go-diff#157`](https://github.com/sergi/go-diff/issues/157).
 
 ## Repository map
 

@@ -4,14 +4,13 @@
 
 ## Status
 
-Reproduced against the pinned upstream v1.4.0 commit. A GitHub connector search
-on 2026-08-02 found no issue matching `PatchMake invalid UTF-8 panic`,
-`slice bounds out of range patchMake2`, `invalid UTF-8 patch`, or
-`panic PatchMake`. Issue #21 discusses DiffMain's replacement policy, but does
-not report this PatchMake panic. An issue creation attempt through the connected
-GitHub integration on 2026-08-02 returned HTTP 403 (`Resource not accessible by
-integration`), so no issue URL is claimed. A ready-to-paste report is preserved
-beside the reproducer.
+Reproduced against the pinned upstream v1.4.0 commit and filed as
+[sergi/go-diff#157](https://github.com/sergi/go-diff/issues/157) on 2026-08-02.
+The duplicate audit found closed issue #21 about DiffMain's replacement policy
+and closed issues #31/#127 for different valid-text `PatchMake` panics; none
+covers this invalid-byte length expansion. The connected GitHub integration's
+write attempt returned HTTP 403, so the report was filed through the owner's
+authenticated GitHub CLI session and then verified live.
 
 ## Minimal reproducer
 

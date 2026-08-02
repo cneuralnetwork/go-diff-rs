@@ -1,0 +1,32 @@
+{
+  "escape_hatches": {
+    "dyn_any_count": 0,
+    "ffi_declaration_count": 0,
+    "library_expect_count": 2,
+    "library_panic_macro_count": 1,
+    "library_unwrap_count": 0,
+    "unsafe_block_or_declaration_count": 0
+  },
+  "generated_at_utc": "2026-08-02T12:32:22.028718+00:00",
+  "implementation": {
+    "library_physical_source_lines": 2636,
+    "physical_source_lines": 2890,
+    "rust_files": 10,
+    "third_party_runtime_dependencies": 0,
+    "under_8000_source_line_limit": true
+  },
+  "policy": {
+    "pre_existing_port_used": false,
+    "source_language_runtime_used_by_shipped_artifact": false,
+    "unsafe_forbidden_by_crate": true
+  },
+  "tests": {
+    "additional_test_functions": 10,
+    "physical_test_lines": 1987,
+    "port_and_cli_test_attributes": 51,
+    "port_test_files": 10,
+    "source_unit_test_attributes": 1,
+    "total_test_attributes": 52,
+    "translated_upstream_test_functions": 42
+  }
+}

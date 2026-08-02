@@ -1,0 +1,2 @@
+Diff Match Patch synchronizes plain text.
+The Go library is the reference implementation.

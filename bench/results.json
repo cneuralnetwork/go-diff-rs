@@ -1,0 +1,87 @@
+{
+  "generated_at_utc": "2026-08-02T12:31:25.011698+00:00",
+  "host": {
+    "cpu_count": 20,
+    "machine": "x86_64",
+    "platform": "Linux-6.17.10-200.fc42.x86_64-x86_64-with-glibc2.41",
+    "processor": ""
+  },
+  "original_go": {
+    "binary_sha256": "9a2cc8b001188242c4a45efab276df08e0a97024400289facc521a86ab2cfa2d",
+    "latency_ns": {
+      "max": 148335614,
+      "mean": 117078432.2,
+      "min": 84670101,
+      "p50": 115368342,
+      "p95": 147359783,
+      "p99": 148335614,
+      "samples": 50
+    },
+    "max_rss_kib": 8724,
+    "output_shape": {
+      "diffs": 2210,
+      "text1_bytes": 12979,
+      "text2_bytes": 11918
+    },
+    "startup_ns": {
+      "max": 150404078,
+      "mean": 126407334.0,
+      "min": 88475028,
+      "p50": 130741518,
+      "p95": 144808252,
+      "p99": 150404078,
+      "samples": 30
+    },
+    "throughput_ops_per_second": 8.541
+  },
+  "port_rust": {
+    "binary_sha256": "5498813f654c56fdc43a21b16358a03f84b80bc8a64be2c58b3710d6770a4638",
+    "latency_ns": {
+      "max": 110685807,
+      "mean": 86238500.0,
+      "min": 66355947,
+      "p50": 93163833,
+      "p95": 107953893,
+      "p99": 110685807,
+      "samples": 50
+    },
+    "max_rss_kib": 3456,
+    "output_shape": {
+      "diffs": 2210,
+      "text1_bytes": 12979,
+      "text2_bytes": 11918
+    },
+    "startup_ns": {
+      "max": 127171539,
+      "mean": 96765433.4,
+      "min": 69905802,
+      "p50": 97479317,
+      "p95": 107555221,
+      "p99": 127171539,
+      "samples": 30
+    },
+    "throughput_ops_per_second": 11.596
+  },
+  "rust_over_go_ratio": {
+    "latency_p99": 0.7462,
+    "max_rss": 0.3961,
+    "startup_p99": 0.8455,
+    "throughput": 1.3577
+  },
+  "schema_version": 1,
+  "toolchains": {
+    "go": "go version go1.24.10 linux/amd64",
+    "rustc": "rustc 1.85.0 (4d91de4e4 2025-02-17)"
+  },
+  "upstream_commit": "57c41f4cb9849a2e83cdbd7644b31e6d7a7e2586",
+  "workload": {
+    "first_bytes": 12979,
+    "first_sha256": "92a6f5c3992d98632eea7a6c6261cf1a26ae484b34358778b774a2d58fd356d3",
+    "latency_samples": 50,
+    "name": "upstream speedtest pair / DiffMain(check_lines=true)",
+    "rss_batch_iterations": 10,
+    "second_bytes": 11918,
+    "second_sha256": "8d106ddba8bd4a85a8bb4b59e481b88f536de98046dc8e4f76f7551c265c5dd3",
+    "startup_samples": 30
+  }
+}

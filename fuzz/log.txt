@@ -1,0 +1,17 @@
+status=PASS
+upstream_commit=57c41f4cb9849a2e83cdbd7644b31e6d7a7e2586
+seed=1472470860
+requested_duration_seconds=60.000
+elapsed_seconds=60.002
+cases=124772
+diff_requests=71308
+match_requests=17826
+patch_requests=35638
+divergences=0
+known_reference_crashes_excluded=invalid-utf8 PatchMake (see BUG_REPORT.md)
+started_at_utc=2026-08-02T11:34:34.997114+00:00
+ended_at_utc=2026-08-02T11:35:34.999483+00:00
+platform=Linux-6.17.10-200.fc42.x86_64-x86_64-with-glibc2.41
+python=3.13.9
+go_oracle_sha256=09525d037320ec26b63ee57061aaed3a34b91423545915bf03f8a5077833f24b
+rust_oracle_sha256=a226d8a10a8d429a98c28f5317acecf28dc8e62c2552eabdf794235ee779bdbb

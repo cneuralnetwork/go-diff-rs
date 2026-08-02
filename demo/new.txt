@@ -1,0 +1,2 @@
+Diff Match Patch synchronizes UTF-8 and byte text.
+The Rust library is a native compatible implementation.

@@ -1,0 +1,449 @@
+{
+  "generated_at_utc": "2026-08-02T12:32:21.978116+00:00",
+  "go_original": {
+    "files": {
+      "github.com/sergi/go-diff/diffmatchpatch/diff.go": {
+        "count": 687,
+        "covered": 686,
+        "percent": 99.8544
+      },
+      "github.com/sergi/go-diff/diffmatchpatch/diffmatchpatch.go": {
+        "count": 1,
+        "covered": 1,
+        "percent": 100.0
+      },
+      "github.com/sergi/go-diff/diffmatchpatch/index.go": {
+        "count": 13,
+        "covered": 13,
+        "percent": 100.0
+      },
+      "github.com/sergi/go-diff/diffmatchpatch/match.go": {
+        "count": 75,
+        "covered": 75,
+        "percent": 100.0
+      },
+      "github.com/sergi/go-diff/diffmatchpatch/mathutil.go": {
+        "count": 6,
+        "covered": 6,
+        "percent": 100.0
+      },
+      "github.com/sergi/go-diff/diffmatchpatch/operation_string.go": {
+        "count": 4,
+        "covered": 0,
+        "percent": 0.0
+      },
+      "github.com/sergi/go-diff/diffmatchpatch/patch.go": {
+        "count": 305,
+        "covered": 303,
+        "percent": 99.3443
+      },
+      "github.com/sergi/go-diff/diffmatchpatch/stringutil.go": {
+        "count": 77,
+        "covered": 73,
+        "percent": 94.8052
+      }
+    },
+    "function_report": "coverage/go-functions.txt",
+    "model": "go cover statement blocks",
+    "raw_profile": "coverage/go.out",
+    "total": {
+      "count": 1168,
+      "covered": 1157,
+      "percent": 99.0582
+    }
+  },
+  "non_comparable_percentage_point_delta": -1.4208,
+  "rust_port": {
+    "algorithm_modules": {
+      "functions": {
+        "count": 75,
+        "covered": 74,
+        "percent": 98.6667
+      },
+      "lines": {
+        "count": 1619,
+        "covered": 1594,
+        "percent": 98.4558
+      },
+      "regions": {
+        "count": 851,
+        "covered": 823,
+        "percent": 96.7098
+      }
+    },
+    "cargo_llvm_cov_version": "0.8.6",
+    "files": {
+      "bench-driver.rs": {
+        "branches": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "functions": {
+          "count": 1,
+          "covered": 0,
+          "percent": 0.0
+        },
+        "instantiations": {
+          "count": 2,
+          "covered": 0,
+          "percent": 0.0
+        },
+        "lines": {
+          "count": 30,
+          "covered": 0,
+          "percent": 0.0
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "regions": {
+          "count": 7,
+          "covered": 0,
+          "notcovered": 7,
+          "percent": 0.0
+        }
+      },
+      "diff.rs": {
+        "branches": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "functions": {
+          "count": 47,
+          "covered": 46,
+          "percent": 97.87234042553192
+        },
+        "instantiations": {
+          "count": 116,
+          "covered": 76,
+          "percent": 65.51724137931035
+        },
+        "lines": {
+          "count": 1023,
+          "covered": 1011,
+          "percent": 98.82697947214076
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "regions": {
+          "count": 539,
+          "covered": 525,
+          "notcovered": 14,
+          "percent": 97.40259740259741
+        }
+      },
+      "differential-oracle.rs": {
+        "branches": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "functions": {
+          "count": 13,
+          "covered": 0,
+          "percent": 0.0
+        },
+        "instantiations": {
+          "count": 26,
+          "covered": 0,
+          "percent": 0.0
+        },
+        "lines": {
+          "count": 110,
+          "covered": 0,
+          "percent": 0.0
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "regions": {
+          "count": 94,
+          "covered": 0,
+          "notcovered": 94,
+          "percent": 0.0
+        }
+      },
+      "main.rs": {
+        "branches": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "functions": {
+          "count": 14,
+          "covered": 8,
+          "percent": 57.14285714285714
+        },
+        "instantiations": {
+          "count": 28,
+          "covered": 8,
+          "percent": 28.57142857142857
+        },
+        "lines": {
+          "count": 93,
+          "covered": 83,
+          "percent": 89.24731182795699
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "regions": {
+          "count": 97,
+          "covered": 71,
+          "notcovered": 26,
+          "percent": 73.19587628865979
+        }
+      },
+      "match_impl.rs": {
+        "branches": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "functions": {
+          "count": 5,
+          "covered": 5,
+          "percent": 100.0
+        },
+        "instantiations": {
+          "count": 24,
+          "covered": 11,
+          "percent": 45.83333333333333
+        },
+        "lines": {
+          "count": 131,
+          "covered": 130,
+          "percent": 99.23664122137404
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "regions": {
+          "count": 59,
+          "covered": 58,
+          "notcovered": 1,
+          "percent": 98.30508474576273
+        }
+      },
+      "patch.rs": {
+        "branches": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "functions": {
+          "count": 23,
+          "covered": 23,
+          "percent": 100.0
+        },
+        "instantiations": {
+          "count": 59,
+          "covered": 49,
+          "percent": 83.05084745762711
+        },
+        "lines": {
+          "count": 465,
+          "covered": 453,
+          "percent": 97.41935483870968
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "regions": {
+          "count": 253,
+          "covered": 240,
+          "notcovered": 13,
+          "percent": 94.86166007905138
+        }
+      },
+      "text.rs": {
+        "branches": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "functions": {
+          "count": 21,
+          "covered": 19,
+          "percent": 90.47619047619048
+        },
+        "instantiations": {
+          "count": 44,
+          "covered": 28,
+          "percent": 63.63636363636363
+        },
+        "lines": {
+          "count": 67,
+          "covered": 61,
+          "percent": 91.04477611940298
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "regions": {
+          "count": 30,
+          "covered": 26,
+          "notcovered": 4,
+          "percent": 86.66666666666667
+        }
+      },
+      "types.rs": {
+        "branches": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "functions": {
+          "count": 14,
+          "covered": 14,
+          "percent": 100.0
+        },
+        "instantiations": {
+          "count": 33,
+          "covered": 23,
+          "percent": 69.6969696969697
+        },
+        "lines": {
+          "count": 94,
+          "covered": 93,
+          "percent": 98.93617021276596
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "regions": {
+          "count": 40,
+          "covered": 37,
+          "notcovered": 3,
+          "percent": 92.5
+        }
+      },
+      "util.rs": {
+        "branches": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "functions": {
+          "count": 35,
+          "covered": 35,
+          "percent": 100.0
+        },
+        "instantiations": {
+          "count": 69,
+          "covered": 55,
+          "percent": 79.71014492753623
+        },
+        "lines": {
+          "count": 294,
+          "covered": 277,
+          "percent": 94.21768707482994
+        },
+        "mcdc": {
+          "count": 0,
+          "covered": 0,
+          "notcovered": 0,
+          "percent": 0.0
+        },
+        "regions": {
+          "count": 209,
+          "covered": 199,
+          "notcovered": 10,
+          "percent": 95.21531100478468
+        }
+      }
+    },
+    "library": {
+      "functions": {
+        "count": 145,
+        "covered": 142,
+        "percent": 97.931
+      },
+      "lines": {
+        "count": 2074,
+        "covered": 2025,
+        "percent": 97.6374
+      },
+      "regions": {
+        "count": 1130,
+        "covered": 1085,
+        "percent": 96.0177
+      }
+    },
+    "model": "LLVM source-based coverage",
+    "raw_profile": "coverage/rust.json",
+    "whole_instrumented_targets": {
+      "branches": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "functions": {
+        "count": 173,
+        "covered": 150,
+        "percent": 86.70520231213872
+      },
+      "instantiations": {
+        "count": 401,
+        "covered": 250,
+        "percent": 62.34413965087282
+      },
+      "lines": {
+        "count": 2307,
+        "covered": 2108,
+        "percent": 91.37407889033376
+      },
+      "mcdc": {
+        "count": 0,
+        "covered": 0,
+        "notcovered": 0,
+        "percent": 0
+      },
+      "regions": {
+        "count": 1328,
+        "covered": 1156,
+        "notcovered": 172,
+        "percent": 87.04819277108435
+      }
+    }
+  },
+  "upstream_commit": "57c41f4cb9849a2e83cdbd7644b31e6d7a7e2586",
+  "warning": "Go statement coverage and Rust LLVM line/region coverage use different models; the percentage-point delta is disclosed but is not an equivalence claim."
+}

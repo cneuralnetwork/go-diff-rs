@@ -12,6 +12,13 @@ covers this invalid-byte length expansion. The connected GitHub integration's
 write attempt returned HTTP 403, so the report was filed through the owner's
 authenticated GitHub CLI session and then verified live.
 
+A focused fix is submitted as draft
+[sergi/go-diff#158](https://github.com/sergi/go-diff/pull/158), commit
+`b3ae7e790c4ce6bf423549807848b2c1c2fec5a0`. It normalizes the source only when
+it exactly matches `DiffMain`'s reconstructed U+FFFD form, preserves handcrafted
+raw-byte diffs, and adds regression coverage for both affected `PatchMake`
+entry points. `go test ./...`, the uncached race suite, and `go vet ./...` pass.
+
 ## Minimal reproducer
 
 ```go
@@ -52,7 +59,8 @@ The Rust port's default v1.4.0 profile intentionally preserves the panic; the
 regression is explicit in `tests/port/bug_regressions.rs` and recorded in
 `DECISIONS.md`. It is excluded only from the survivor stream because a crashing
 reference process cannot complete a persistent differential session. Invalid
-UTF-8 remains covered for DiffMain and MatchMain.
+UTF-8 remains covered for DiffMain and MatchMain. The upstream PR does not alter
+the port's pinned v1.4.0 compatibility target.
 
 ## Finding 2: semantic-lossless scoring never uses its start expression
 

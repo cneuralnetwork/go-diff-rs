@@ -17,6 +17,7 @@
 - [x] Five-minute live demo script/runbook
 - [x] Public repository: https://github.com/cneuralnetwork/go-diff-rs
 - [x] Upstream Bug Catcher issue: https://github.com/sergi/go-diff/issues/157
+- [x] Upstream fix PR: https://github.com/sergi/go-diff/pull/158
 - [ ] Five-minute video URL inserted after the owner records/uploads it
 
 Before submission, run `make check`, `make fuzz`, `make bench`, `make coverage`,

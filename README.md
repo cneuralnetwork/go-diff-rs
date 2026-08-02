@@ -125,7 +125,9 @@ reproducers and root-cause analyses are in [BUG_REPORT.md](BUG_REPORT.md) and
 `bug-cases/`. The v1.4.0 compatibility profile preserves both behaviors
 explicitly rather than silently claiming behavioral improvements. The primary
 finding is filed upstream as
-[`sergi/go-diff#157`](https://github.com/sergi/go-diff/issues/157).
+[`sergi/go-diff#157`](https://github.com/sergi/go-diff/issues/157), with a
+focused fix proposed in
+[`sergi/go-diff#158`](https://github.com/sergi/go-diff/pull/158).
 
 ## Repository map
 

@@ -43,14 +43,14 @@ and byte vectors through `AsRef<[u8]>`/`From`.
 | `MatchMain` | `match_main` | Complete |
 | `MatchBitap` | `match_bitap` | Complete |
 | `MatchAlphabet` | `match_alphabet` | Complete |
-| variadic `PatchMake` | four typed `patch_make*` entry points | Complete |
+| variadic `PatchMake` | `patch_make_empty` plus four typed `patch_make*` entry points | Complete |
 | `PatchAddContext` | `patch_add_context` | Complete |
 | `PatchDeepCopy` | `patch_deep_copy` | Complete |
 | `PatchApply` | `patch_apply` | Complete |
 | `PatchAddPadding` | `patch_add_padding` | Complete |
 | `PatchSplitMax` | `patch_split_max` | Complete |
 | `PatchToText` | `patch_to_text` | Complete |
-| `PatchFromText` | `patch_from_text` returning `Result` | Complete |
+| `PatchFromText` | `patch_from_text` returning `Result`; completed patches are retained by `PatchError::partial_patches` on a later parse error | Complete |
 | seven public configuration fields | seven snake_case public fields | Complete |
 
 There are no omitted exported source symbols. Rust-only additions are `Text`,

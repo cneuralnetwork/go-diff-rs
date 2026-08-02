@@ -1,6 +1,6 @@
 // Direct behavioral port of diffmatchpatch/patch.go from sergi/go-diff v1.4.0.
 
-use crate::util::{escaped_for_patch, find_subslice, query_unescape, split_bytes};
+use crate::util::{encode_go_runes, escaped_for_patch, find_subslice, query_unescape, split_bytes};
 use crate::{DIFF_DELETE, DIFF_EQUAL, DIFF_INSERT, Diff, DiffMatchPatch, Patch, PatchError, Text};
 use std::fmt;
 
@@ -74,6 +74,12 @@ impl DiffMatchPatch {
         patch.length1 += (prefix.len() + suffix.len()) as isize;
         patch.length2 += (prefix.len() + suffix.len()) as isize;
         patch
+    }
+
+    /// Preserve Go's zero-argument `PatchMake()` behavior.
+    #[must_use]
+    pub fn patch_make_empty(&self) -> Vec<Patch> {
+        Vec::new()
     }
 
     /// Construct patches from source and destination text.
@@ -279,7 +285,12 @@ impl DiffMatchPatch {
     #[must_use]
     pub fn patch_add_padding(&self, patches: &mut [Patch]) -> Text {
         let padding_length = self.patch_margin.max(0) as usize;
-        let null_padding: Vec<u8> = (1..=padding_length).map(|value| value as u8).collect();
+        // Go builds this with `string(rune(x))`, so values above ASCII expand
+        // to their UTF-8 encoding instead of truncating to one byte.
+        let padding_runes = (1..=padding_length)
+            .map(|value| value as i32 as u32)
+            .collect::<Vec<_>>();
+        let null_padding = encode_go_runes(&padding_runes);
         for patch in patches.iter_mut() {
             patch.start1 += padding_length as isize;
             patch.start2 += padding_length as isize;
@@ -443,7 +454,10 @@ impl DiffMatchPatch {
         let mut patches = Vec::new();
         while pointer < lines.len() {
             let Some((start1, length1, start2, length2)) = parse_header(lines[pointer]) else {
-                return Err(PatchError::InvalidPatchString(Text::from(lines[pointer])));
+                return Err(partial_parse_error(
+                    patches,
+                    PatchError::InvalidPatchString(Text::from(lines[pointer])),
+                ));
             };
             let mut patch = Patch {
                 start1,
@@ -469,10 +483,13 @@ impl DiffMatchPatch {
                     b'+' => DIFF_INSERT,
                     b' ' => DIFF_EQUAL,
                     other => {
-                        return Err(PatchError::InvalidPatchMode {
-                            mode: other,
-                            line: Text::from(decoded),
-                        });
+                        return Err(partial_parse_error(
+                            patches,
+                            PatchError::InvalidPatchMode {
+                                mode: other,
+                                line: Text::from(decoded),
+                            },
+                        ));
                     }
                 };
                 patch.diffs.push(Diff::new(operation, decoded));
@@ -481,6 +498,17 @@ impl DiffMatchPatch {
             patches.push(patch);
         }
         Ok(patches)
+    }
+}
+
+fn partial_parse_error(patches: Vec<Patch>, error: PatchError) -> PatchError {
+    if patches.is_empty() {
+        error
+    } else {
+        PatchError::PartialPatchParse {
+            patches,
+            error: Box::new(error),
+        }
     }
 }
 

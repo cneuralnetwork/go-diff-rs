@@ -187,6 +187,21 @@ pub enum PatchError {
         consumed: usize,
         source_bytes: usize,
     },
+    PartialPatchParse {
+        patches: Vec<Patch>,
+        error: Box<PatchError>,
+    },
+}
+
+impl PatchError {
+    /// Return patches parsed successfully before a later patch parse error.
+    #[must_use]
+    pub fn partial_patches(&self) -> Option<&[Patch]> {
+        match self {
+            Self::PartialPatchParse { patches, .. } => Some(patches),
+            _ => None,
+        }
+    }
 }
 
 impl fmt::Display for PatchError {
@@ -221,8 +236,16 @@ impl fmt::Display for PatchError {
                 f,
                 "Delta length ({consumed}) is different from source text length ({source_bytes})"
             ),
+            Self::PartialPatchParse { error, .. } => fmt::Display::fmt(error, f),
         }
     }
 }
 
-impl Error for PatchError {}
+impl Error for PatchError {
+    fn source(&self) -> Option<&(dyn Error + 'static)> {
+        match self {
+            Self::PartialPatchParse { error, .. } => Some(error.as_ref()),
+            _ => None,
+        }
+    }
+}

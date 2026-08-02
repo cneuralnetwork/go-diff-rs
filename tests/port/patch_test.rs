@@ -72,6 +72,24 @@ fn test_patch_from_text() {
             d(DIFF_INSERT, "~!@#$%^&*()_+{}|:\"<>?"),
         ]
     );
+
+    let error = dmp
+        .patch_from_text("@@ -1 +1 @@\n+a\n@@ -2 +2 @@\n?bad\n")
+        .unwrap_err();
+    assert_eq!(error.to_string(), "Invalid patch mode '?' in: bad");
+    let partial = error
+        .partial_patches()
+        .expect("completed patches are retained on parse failure");
+    assert_eq!(dmp.patch_to_text(partial), "@@ -1 +1 @@\n+a\n");
+
+    let error = dmp
+        .patch_from_text("@@ -1 +1 @@\n+a\n@@ malformed @@\n")
+        .unwrap_err();
+    assert_eq!(error.to_string(), "Invalid patch string: @@ malformed @@");
+    assert_eq!(
+        dmp.patch_to_text(error.partial_patches().unwrap()),
+        "@@ -1 +1 @@\n+a\n"
+    );
 }
 
 #[test]
@@ -138,6 +156,7 @@ fn test_patch_make_and_patch_to_text() {
         "@@ -1,8 +1,7 @@\n Th\n-at\n+e\n  qui\n@@ -21,17 +21,18 @@\n jump\n-ed\n+s\n  over \n-a\n+the\n  laz\n"
     );
     assert_eq!(dmp.patch_to_text(&dmp.patch_make(text1, text2)), expected);
+    assert!(dmp.patch_make_empty().is_empty());
     let diffs = dmp.diff_main(text1, text2, false);
     assert_eq!(
         dmp.patch_to_text(&dmp.patch_make_from_diffs(&diffs)),
@@ -240,6 +259,15 @@ fn test_patch_add_padding() {
         let _ = dmp.patch_add_padding(&mut patches);
         assert_eq!(dmp.patch_to_text(&patches), padded);
     }
+
+    let mut wide_dmp = DiffMatchPatch::new();
+    wide_dmp.patch_margin = 128;
+    let mut patches = vec![Patch::new(vec![d(DIFF_INSERT, "x")], 0, 0, 0, 1)];
+    let padding = wide_dmp.patch_add_padding(&mut patches);
+    assert_eq!(padding.len(), 129);
+    assert!(padding.as_bytes().ends_with(&[0x7f, 0xc2, 0x80]));
+    assert_eq!(patches[0].length1, 256);
+    assert_eq!(patches[0].length2, 257);
 }
 
 #[test]

@@ -291,6 +291,7 @@ pub(crate) fn html_escape(bytes: &[u8]) -> Vec<u8> {
     output
 }
 
+#[cfg(test)]
 pub(crate) fn string_to_indexes(text: &[u8]) -> Vec<u32> {
     decode_go_runes(text)
         .into_iter()
@@ -298,6 +299,7 @@ pub(crate) fn string_to_indexes(text: &[u8]) -> Vec<u32> {
         .collect()
 }
 
+#[cfg(test)]
 pub(crate) fn indexes_to_string(indexes: &[u32]) -> Vec<u8> {
     let runes: Vec<u32> = indexes
         .iter()
@@ -306,7 +308,6 @@ pub(crate) fn indexes_to_string(indexes: &[u32]) -> Vec<u8> {
     encode_go_runes(&runes)
 }
 
-#[cfg(test)]
 pub(crate) fn int_to_rune(mut value: u32) -> u32 {
     if value < (1 << 7) {
         return value;

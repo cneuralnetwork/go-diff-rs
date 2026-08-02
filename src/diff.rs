@@ -2,8 +2,8 @@
 
 use crate::util::{
     common_prefix_runes, common_suffix_runes, decode_go_rune, decode_go_runes, encode_go_runes,
-    escaped_for_patch, find_runes, find_subslice, html_escape, index_of_runes, indexes_to_string,
-    query_unescape, rune_count, rune_to_int, split_bytes, string_to_indexes,
+    escaped_for_patch, find_runes, find_subslice, html_escape, index_of_runes, int_to_rune,
+    query_unescape, rune_count, rune_to_int, split_bytes,
 };
 use crate::{
     DIFF_DELETE, DIFF_EQUAL, DIFF_INSERT, Deadline, Diff, DiffMatchPatch, Operation, PatchError,
@@ -336,9 +336,11 @@ impl DiffMatchPatch {
     ) -> (Text, Text, Vec<Text>) {
         let (indexes1, indexes2, lines) =
             self.diff_lines_to_indexes(text1.as_ref(), text2.as_ref());
+        let runes1 = indexes1.into_iter().map(int_to_rune).collect::<Vec<_>>();
+        let runes2 = indexes2.into_iter().map(int_to_rune).collect::<Vec<_>>();
         (
-            Text::from(indexes_to_string(&indexes1)),
-            Text::from(indexes_to_string(&indexes2)),
+            Text::from(encode_go_runes(&runes1)),
+            Text::from(encode_go_runes(&runes2)),
             lines,
         )
     }
@@ -352,8 +354,8 @@ impl DiffMatchPatch {
     ) -> (Vec<u32>, Vec<u32>, Vec<Text>) {
         let (indexes1, indexes2, lines) =
             self.diff_lines_to_indexes(text1.as_ref(), text2.as_ref());
-        let runes1 = string_to_indexes(&indexes_to_string(&indexes1));
-        let runes2 = string_to_indexes(&indexes_to_string(&indexes2));
+        let runes1 = indexes1.into_iter().map(int_to_rune).collect();
+        let runes2 = indexes2.into_iter().map(int_to_rune).collect();
         (runes1, runes2, lines)
     }
 

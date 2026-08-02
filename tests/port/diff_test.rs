@@ -1118,9 +1118,10 @@ fn test_massive_rune_diff_conversion() {
     ))
     .unwrap();
     let dmp = DiffMatchPatch::new();
-    let (first, second, lines) = dmp.diff_lines_to_chars(b"", fixture);
+    let (first, second, lines) = dmp.diff_lines_to_chars(b"", &fixture);
     let diffs = dmp.diff_chars_to_lines(&dmp.diff_main(&first, &second, false), &lines);
-    assert!(!diffs.is_empty());
+    assert!(dmp.diff_text1(&diffs).is_empty());
+    assert_eq!(dmp.diff_text2(&diffs).as_bytes(), fixture);
 }
 
 #[test]

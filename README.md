@@ -62,12 +62,12 @@ target/release/go-diff-rs diff demo/old.txt demo/new.txt --format patch
 |---|---:|
 | Untouched kickoff test functions translated | 42 / 42 |
 | Translated upstream tests passing | 42 / 42 (100%) |
-| Additional Rust/CLI tests | 10 |
+| Additional Rust/CLI tests | 11 |
 | Upstream benchmarks translated | 9 / 9 |
 | Unsafe blocks/declarations | 0 |
 | `dyn Any` / FFI declarations | 0 / 0 |
 | Third-party runtime dependencies | 0 |
-| Rust implementation lines | 2,890 (under 8,000) |
+| Rust implementation lines | 2,944 (under 8,000) |
 | Go original statement coverage | 99.06% |
 | Rust library line coverage | 97.64% |
 | Rust core-algorithm line coverage | 98.46% |

@@ -4,7 +4,7 @@ test port_tests::match_test::test_match_alphabet ... ok
 test port_tests::match_test::test_match_bitap ... ok
 test port_tests::match_test::test_match_main ... ok
 
-test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 47 filtered out; finished in 0.00s
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 48 filtered out; finished in 0.00s
 
-    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.01s
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.00s
      Running unittests src/lib.rs (target/debug/deps/diff_match_patch-f99e7c542a8d19d6)

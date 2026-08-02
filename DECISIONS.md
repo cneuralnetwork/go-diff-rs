@@ -54,12 +54,13 @@ identical; callers gain normal Rust aliasing guarantees. `DiffHalfMatch` uses
 
 ## 8. Split variadic `PatchMake` into typed entry points
 
-Go dispatches `...interface{}` at runtime across four accepted call shapes and
-silently returns empty output for unsupported shapes. Rust has no safe idiomatic
-equivalent to unchecked variadic `any`. The port exposes `patch_make`,
-`patch_make_from_diffs`, `patch_make_from_text_and_diffs`, and
-`patch_make_deprecated`, preserving all valid functionality with compile-time
-types. Every upstream overload test is retained.
+Go dispatches `...interface{}` at runtime across five source-tested call shapes,
+including the zero-argument form that returns an empty patch list. Rust has no
+safe idiomatic equivalent to unchecked variadic `any`. The port exposes
+`patch_make_empty`, `patch_make`, `patch_make_from_diffs`,
+`patch_make_from_text_and_diffs`, and `patch_make_deprecated`, preserving the
+supported functionality with compile-time types. Every upstream overload test
+is retained.
 
 ## 9. Preserve patch diff privacy but add Rust accessors
 

@@ -23,9 +23,11 @@ The unavoidable mechanical adaptations are:
 3. Go `[]rune` becomes `Vec<u32>` so invalid Go rune values remain expressible.
 4. `assert/testify` calls become standard Rust assertions.
 5. Go errors become `Result<_, PatchError>` and error prefixes remain checked.
+   When `PatchFromText` fails after complete patches, the error retains them and
+   exposes them through `PatchError::partial_patches`.
 6. Go `nil` diff slices map to an empty Rust `Vec` in the successful empty-delta case.
-7. The variadic `PatchMake(...interface{})` cases call the corresponding typed
-   Rust overloads.
+7. The zero-argument and variadic `PatchMake(...interface{})` cases call the
+   corresponding typed Rust entry points.
 8. The intentional out-of-range panic is observed with `catch_unwind`.
 9. Fixture paths are rooted with `CARGO_MANIFEST_DIR` instead of depending on
    the process working directory.

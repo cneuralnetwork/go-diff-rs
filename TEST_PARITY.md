@@ -19,4 +19,5 @@ to a Rust crate. They remain byte-for-byte preserved and independently runnable;
 the Rust files retain every test function/table and adaptation is disclosed in
 `TEST_ADAPTATIONS.md`. Additional Rust checks cover byte-invalid input,
 configuration `Send + Sync`, a multithreaded soak, both discovered upstream
-behaviors, native API ergonomics, and the runnable CLI.
+behaviors, large line-identifier boundaries, native API ergonomics, and the
+runnable CLI.

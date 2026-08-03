@@ -3,6 +3,9 @@ use crate::PatchError;
 pub(crate) const REPLACEMENT: u32 = 0xFFFD;
 
 pub(crate) fn decode_go_runes(bytes: &[u8]) -> Vec<u32> {
+    if bytes.is_ascii() {
+        return bytes.iter().map(|&byte| u32::from(byte)).collect();
+    }
     let mut result = Vec::with_capacity(bytes.len());
     let mut i = 0;
     while i < bytes.len() {
@@ -60,6 +63,9 @@ fn continuation(byte: u8) -> bool {
 }
 
 pub(crate) fn encode_go_runes(runes: &[u32]) -> Vec<u8> {
+    if runes.iter().all(|&rune| rune < 0x80) {
+        return runes.iter().map(|&rune| rune as u8).collect();
+    }
     let mut output = Vec::with_capacity(runes.len());
     for &rune in runes {
         let ch = char::from_u32(rune).unwrap_or('\u{FFFD}');
